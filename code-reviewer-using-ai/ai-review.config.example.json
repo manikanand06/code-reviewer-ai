@@ -1,0 +1,42 @@
+{
+  "$schema": "Optional. ai-review.config.json — checked into your repo, read by the CLI.",
+
+  "ai": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "temperature": 0.1,
+    "maxOutputTokens": 4096,
+
+    "_comment_azure": "To use Azure OpenAI instead, set provider=\"azure-openai\" and provide:",
+    "azureEndpoint": "",
+    "azureDeployment": "",
+    "azureApiVersion": "2024-08-01-preview"
+  },
+
+  "pipeline": {
+    "concurrency": 4,
+    "cacheEnabled": true,
+    "cacheDir": ".ai-review-cache",
+    "skipUnreviewable": true,
+
+    "_comment_focus": "Restrict to a subset of categories. Omit for everything.",
+    "focus": null
+  },
+
+  "output": {
+    "dir": "review-output",
+    "formats": ["html", "markdown", "console"]
+  },
+
+  "github": {
+    "_comment": "Owner/repo can also come from GITHUB_REPOSITORY env var (e.g. octocat/hello-world)",
+    "owner": "",
+    "repo": ""
+  },
+
+  "azure": {
+    "orgUrl": "",
+    "project": "",
+    "repo": ""
+  }
+}
